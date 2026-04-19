@@ -1,0 +1,262 @@
+.hero {
+  min-height: 120svh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface);
+
+  .hero-container {
+    height: 120svh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 0;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 10vw, 11rem);
+      grid-area: 2/1/5/12;
+      justify-self: start;
+      text-transform: uppercase;
+      letter-spacing: -10;
+      margin-top: 0rem;
+      margin-left: 2rem;
+      line-height: 0.85;
+      font-weight: 800;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      grid-area: 4/1/7/7;
+      align-self: center;
+      margin-left: 2rem;
+      font-size: var(--fs-headline-sm);
+      font-weight: 300;
+      margin-top: 2rem;
+    }
+
+    .hero-cta {
+      grid-area: 5/12/6/12;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      margin-right: 2rem;
+
+      .cta-primary {
+        display: inline-block;
+        text-align: center;
+        padding: 0.65rem 1.5rem;
+        background: var(--color-primary);
+        color: #ffffff;
+        font-family: var(--font-body);
+        font-size: clamp(0.8rem, 1.1vw, 1rem);
+        font-weight: 300;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        width: 100%;
+        white-space: nowrap;
+
+        &:hover {
+          background: var(--color-on-primary);
+          color: var(--color-primary);
+          border: 1px solid var(--color-primary);
+        }
+      }
+
+      .cta-secondary {
+        display: inline-block;
+        text-align: center;
+        padding: 0.65rem 1.5rem;
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        font-family: var(--font-body);
+        font-size: clamp(0.8rem, 1.1vw, 1rem);
+        font-weight: 300;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        width: 100%;
+        white-space: nowrap;
+
+        &:hover {
+          background: var(--color-primary);
+          color: var(--color-on-primary);
+        }
+      }
+    }
+
+    .image-wrapper {
+      grid-area: 6/1/11/13;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 6 / 5;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .hero-image {
+        object-fit: cover;
+        object-position: center;
+        padding: 2rem 2rem;
+      }
+
+      .manifesto-btn {
+        position: absolute;
+        bottom: 5rem;
+        left: 5rem;
+        padding: 1rem 2rem;
+        background: var(--color-surface);
+        color: var(--color-primary);
+        border: none;
+        font-family: var(--font-body);
+        font-size: var(--fs-label-sm);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        z-index: 5;
+
+        &:hover {
+          background: var(--color-primary);
+          color: var(--color-on-primary);
+        }
+      }
+    }
+    // ─────────────────────────────────────
+    // STATS (Fixed & Cleaned)
+    // ─────────────────────────────────────
+    .stats-grid {
+      grid-area: 11/1/13/13;
+      display: contents;
+    }
+
+    .stat1 {
+      grid-area: 11/1/13/4;
+    }
+    .stat2 {
+      grid-area: 11/4/13/7;
+    }
+    .stat3 {
+      grid-area: 11/7/13/10;
+    }
+    .stat4 {
+      grid-area: 11/10/13/13;
+    }
+
+    .stat1,
+    .stat2,
+    .stat3,
+    .stat4 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      justify-self: center;
+
+      .stat-label {
+        font-family: var(--font-body);
+        font-size: var(--fs-label-sm);
+        font-weight: 400;
+        color: var(--color-on-surface-variant);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .stat-value {
+        font-family: var(--font-display);
+        font-size: clamp(1rem, 3vw, 2rem);
+        font-weight: 600;
+        color: var(--color-primary);
+        letter-spacing: var(--ls-tight);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    min-height: 100svh;
+
+    .hero-container {
+      height: auto;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 6rem 1.5rem 2rem;
+      gap: 1.25rem;
+
+      .hero-title {
+        font-size: clamp(3rem, 13vw, 6rem);
+        margin-left: 0;
+        margin-top: 0;
+        letter-spacing: 0.1;
+        grid-area: unset;
+      }
+
+      .hero-subtitle {
+        font-size: var(--fs-body-md, 1rem);
+        margin-left: 0;
+        margin-top: 0;
+        grid-area: unset;
+      }
+
+      .hero-cta {
+        grid-area: unset;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0;
+        margin-right: 0;
+        gap: 0.75rem;
+
+        .cta-primary,
+        .cta-secondary {
+          width: 100%;
+          font-size: 0.9rem;
+          padding: 0.75rem 1.5rem;
+        }
+      }
+
+      .image-wrapper {
+        grid-area: unset;
+        width: calc(100% + 3rem);
+        margin-left: -1.5rem;
+        aspect-ratio: 4 / 3;
+        height: auto;
+
+        .manifesto-btn {
+          bottom: 3rem;
+          left: 5rem;
+          font-size: 0.65rem;
+          padding: 0.6rem 1rem;
+        }
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem 1rem;
+        width: 100%;
+        padding-bottom: 1rem;
+
+        .stat1,
+        .stat2,
+        .stat3,
+        .stat4 {
+          grid-area: unset;
+          justify-self: start;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+// src/layouts/Navbar/Navbar.scss
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-8);
+
+  // 🎨 Background: Glassmorphism base
+  background: var(--color-on-primary);
+  backdrop-filter: blur(20px);
+
+  // 🌫️ Depth: Ambient shadow only when scrolled
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    height 0.3s ease;
+  z-index: 1000;
+
+  // 🚫 NO-LINE RULE: No border by default
+  border-bottom: none;
+
+  // ─────────────────────────────────────
+  // State: Scrolled
+  // ─────────────────────────────────────
+  &.scrolled {
+    // Tonal stacking: shift to a "higher" surface level
+    background-color: var(--color-surface-container-lowest);
+    height: 80px;
+
+    // 🚫 Still no border—depth via tonal shift only
+  }
+
+  // ─────────────────────────────────────
+  // Logo
+  // ─────────────────────────────────────
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    letter-spacing: var(--ls-tight);
+    z-index: 1001;
+    transition: opacity 0.2s ease;
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  // ─────────────────────────────────────
+  // Desktop Menu
+  // ─────────────────────────────────────
+  .desktop-menu {
+    display: flex;
+    gap: var(--space-8);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: var(--fs-body-md);
+      font-weight: 500;
+      color: var(--color-on-surface-variant);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.2s ease;
+      text-transform: uppercase;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+
+      &.active {
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+    }
+
+    .mobile-cta-item {
+      display: none;
+    }
+  }
+
+  .cta-btn {
+    font-size: 0.7rem;
+    text-decoration: none;
+    font-family: var(--font-body);
+    color: var(--color-on-primary);
+    background-color: var(--color-primary);
+    border: 1px solid rgba(0, 0, 0, 1);
+    padding: 0.55rem 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: var(--color-on-primary);
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+    }
+  }
+
+  // ─────────────────────────────────────
+  // Mobile Toggle (Hamburger)
+  // ─────────────────────────────────────
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2);
+    z-index: 1001;
+
+    .bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: var(--space-1) 0;
+      background-color: var(--color-on-surface);
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    }
+  }
+
+  // ─────────────────────────────────────
+  // Mobile Responsiveness
+  // ─────────────────────────────────────
+  @media (max-width: 768px) {
+    padding: 0 1.25rem;
+
+    .cta-btn {
+      display: none;
+    }
+
+    .desktop-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      z-index: 998;
+      background-color: var(--color-surface-container-lowest);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-12);
+      transition: right 0.3s ease-in-out;
+      box-shadow: var(--shadow-ambient);
+
+      &.open {
+        right: 0;
+      }
+
+      .nav-link {
+        font-size: var(--fs-body-lg);
+        color: var(--color-on-surface);
+      }
+
+      .mobile-cta-item {
+        display: block;
+
+        .cta-btn {
+          display: inline-block;
+          font-size: 0.85rem;
+          padding: 0.75rem 2.5rem;
+        }
+      }
+    }
+
+    .mobile-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.open {
+        .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        .bar:nth-child(2) {
+          opacity: 0;
+        }
+        .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    }
+  }
+}

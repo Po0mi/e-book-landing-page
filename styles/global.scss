@@ -1,0 +1,73 @@
+// ==========================================
+// 1. COLORS
+// ==========================================
+:root {
+  // Primary
+  --color-primary: #000101;
+  --color-primary-container: #1a1c1e;
+  --color-on-primary: #ffffff;
+
+  // Surface Hierarchy
+  --color-surface: #f9f9fb;
+  --color-surface-container-low: #f3f3f5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container: #edeef0;
+  --color-surface-container-high: #e5e6e8;
+
+  // Text & Variants
+  --color-on-surface: #1a1c1d;
+  --color-on-surface-variant: #6b6d70;
+  --color-outline-variant: #c5c6ca;
+
+  // Secondary
+  --color-secondary-container: #dfe2eb;
+  --color-on-secondary-container: #1a1c1e;
+
+  // Utilities
+  --color-surface-tint: #000101;
+}
+
+// ==========================================
+// 2. TYPOGRAPHY
+// ==========================================
+:root {
+  // Font Families
+  --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+
+  // Font Sizes
+  --fs-display-lg: 3.5rem; // 56px
+  --fs-display-md: 2.5rem; // 40px
+  --fs-headline-sm: 1.75rem; // 28px
+  --fs-body-lg: 1rem; // 16px
+  --fs-body-md: 0.875rem; // 14px
+  --fs-label-md: 0.875rem; // 14px
+  --fs-label-sm: 0.75rem; // 12px
+
+  // Letter Spacing
+  --ls-tight: -0.02em;
+  --ls-wide: 0.1em;
+
+  // Line Heights
+  --lh-tight: 1.1;
+  --lh-standard: 1.6;
+  --lh-loose: 1.8;
+}
+
+// ==========================================
+// 3. SPACING (8px Base Scale)
+// ==========================================
+:root {
+  --space-1: 0.25rem; // 4px
+  --space-2: 0.5rem; // 8px
+  --space-3: 0.75rem; // 12px
+  --space-4: 1rem; // 16px
+  --space-5: 1.25rem; // 20px
+  --space-6: 1.5rem; // 24px
+  --space-8: 2rem; // 32px
+  --space-10: 2.5rem; // 40px
+  --space-12: 3rem; // 48px
+  --space-16: 4rem; // 64px
+  --space-20: 5rem; // 80px
+  --space-24: 6rem; // 96px
+}
