@@ -41,6 +41,7 @@
     height: 100%;
     align-self: flex-start;
 
+
     .body-left,
     .body-middle,
     .body-right {
@@ -71,6 +72,50 @@
       font-weight: 300;
       max-width: 50ch;
       display: inline-block;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .chapters-body {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    min-height: unset;
+
+    .chapters-header {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin: 0;
+
+      .header-left {
+        font-size: clamp(3rem, 13vw, 6rem);
+        letter-spacing: -2px;
+      }
+
+      .header-right {
+        font-size: 1rem;
+        margin-top: 0;
+      }
+    }
+
+    .chapters-body {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+
+      .label {
+        font-size: var(--fs-headline-sm);
+      }
+
+      .body-title {
+        font-size: var(--fs-headline-sm);
+      }
+
+      .body-content {
+        font-size: 1rem;
+        max-width: 100%;
+      }
     }
   }
 }

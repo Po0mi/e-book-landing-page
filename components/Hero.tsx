@@ -1,13 +1,16 @@
 "use client";
 import Image from "next/image";
 import Book from "@/assets/blank-book.jpg";
+import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 import "./Hero.scss";
 
 const Hero = () => {
+  const containerRef = useHeroAnimation();
+
   return (
     <section className="hero" id="hero">
       <div className="hero-wrapper"></div>
-      <div className="hero-container">
+      <div className="hero-container" ref={containerRef}>
         <h1 className="hero-title">
           The art of <br />
           minimal living.

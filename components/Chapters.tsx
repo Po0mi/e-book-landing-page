@@ -1,9 +1,12 @@
 "use client";
+import { useChaptersAnimation } from "@/hooks/useChaptersAnimation";
 import "./Chapters.scss";
 
 const Chapters = () => {
+  const containerRef = useChaptersAnimation();
+
   return (
-    <section className="chapters" id="chapters">
+    <section className="chapters" id="chapters" ref={containerRef}>
       <div className="chapters-header">
         <h1 className="header-left">Rethinking the container</h1>
         <p className="header-right">

@@ -1,0 +1,206 @@
+.pricing {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  padding: clamp(6rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem)
+    clamp(4rem, 8vw, 6rem);
+  display: grid;
+  row-gap: clamp(3rem, 6vw, 5rem);
+
+  .pricing-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .header-label {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .header-title {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 7vw, 7rem);
+      font-weight: 700;
+      letter-spacing: -5px;
+      text-transform: uppercase;
+      line-height: var(--lh-tight);
+      text-align: center;
+    }
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+
+    .pricing-card {
+      background-color: var(--color-surface-container-lowest);
+      border: 1px solid var(--color-outline-variant);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      transition: box-shadow 0.2s ease;
+
+      &:hover {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+      }
+
+      &--highlighted {
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+
+        .card-label {
+          color: var(--color-on-primary);
+        }
+
+        .card-description {
+          color: var(--color-on-primary);
+        }
+
+        .price-amount {
+          color: var(--color-on-primary);
+        }
+
+        .price-note {
+          color: var(--color-on-primary);
+        }
+
+        .card-features li {
+          color: var(--color-on-primary);
+          border-top-color: transparent;
+
+          .feature-tick {
+            color: rgba(255, 255, 255, 0.4);
+          }
+        }
+
+        .card-cta {
+          background-color: var(--color-on-primary);
+          color: var(--color-primary);
+          border: 1px solid var(--color-on-primary);
+
+          &:hover {
+            background-color: transparent;
+            color: var(--color-on-primary);
+            border-color: var(--color-on-primary);
+          }
+        }
+      }
+
+      .card-top {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .card-label {
+          font-family: var(--font-display);
+          font-size: var(--fs-label-sm);
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .card-description {
+          font-family: var(--font-body);
+          font-size: var(--fs-body-lg);
+          font-weight: 300;
+          line-height: var(--lh-standard);
+        }
+      }
+
+      .card-price {
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+
+        .price-amount {
+          font-family: var(--font-display);
+          font-size: clamp(2rem, 4vw, 3.5rem);
+          font-weight: 800;
+          letter-spacing: var(--ls-tight);
+        }
+
+        .price-note {
+          font-family: var(--font-body);
+          font-size: var(--fs-label-sm);
+          font-weight: 300;
+          letter-spacing: 0.04em;
+        }
+      }
+
+      .card-features {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        li {
+          font-family: var(--font-body);
+          font-size: var(--fs-body-lg);
+          font-weight: 300;
+          padding: 0.75rem 0;
+          border-top: 1px solid var(--color-outline-variant);
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+
+          .feature-tick {
+            font-weight: 300;
+            flex-shrink: 0;
+          }
+        }
+      }
+
+      .card-cta {
+        display: block;
+        text-align: center;
+        padding: 0.85rem 1.5rem;
+        background-color: var(--color-primary);
+        color: var(--color-on-primary);
+        font-family: var(--font-body);
+        font-size: var(--fs-label-md);
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: var(--color-on-primary);
+          color: var(--color-primary);
+          border-color: var(--color-on-primary);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pricing-header {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+
+      .header-title {
+        font-size: clamp(2.5rem, 13vw, 5rem);
+        letter-spacing: -2px;
+        text-align: left;
+      }
+    }
+
+    .pricing-grid {
+      max-width: 100%;
+    }
+  }
+}

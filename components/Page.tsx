@@ -1,9 +1,14 @@
 "use client";
+import Image from "next/image";
+import bookPage from "@/assets/book-page.png";
+import { usePageAnimation } from "@/hooks/usePageAnimation";
 import "./Page.scss";
 
 const Page = () => {
+  const containerRef = usePageAnimation();
+
   return (
-    <section className="page" id="page">
+    <section className="page" id="page" ref={containerRef}>
       <div className="page-cotent">
         <div className="page-left">
           <span className="left-number">320</span>
@@ -18,7 +23,9 @@ const Page = () => {
           </ul>
         </div>
         <div className="page-right">
-          <div className="page-image-wrapper"></div>
+          <div className="page-image-wrapper">
+            <Image src={bookPage} alt="Book page" fill className="page-image" />
+          </div>
           <span className="right-quote">
             "The curator edition isn't just a book; it's a blueprint for a life
             lived with intent."

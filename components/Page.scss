@@ -19,9 +19,9 @@
       flex-direction: column;
       gap: 2rem;
       background-color: var(--color-on-primary);
-      padding: 5rem 5rem;
-      height: 600px;
-      width: 600px;
+      padding: 5rem;
+      height: 750px;
+      width: 750px;
       box-shadow: 0 5px 5px rgba(105, 105, 105, 0.1);
 
       .left-number {
@@ -58,6 +58,78 @@
           font-family: var(--font-body);
           font-size: 1.25rem;
           font-weight: 300;
+        }
+      }
+    }
+
+    .page-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .page-image-wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+
+        .page-image {
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .right-quote {
+        font-family: var(--font-body);
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
+        font-weight: 300;
+        font-style: italic;
+        line-height: var(--lh-standard);
+        color: var(--color-on-surface-variant);
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .page-cotent {
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+
+      .page-left {
+        width: 100%;
+        height: auto;
+        padding: 3rem;
+      }
+
+      .page-right .page-image-wrapper {
+        aspect-ratio: 16 / 9;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    min-height: unset;
+
+    .page-cotent {
+      .page-left {
+        padding: 2rem;
+
+        .left-number {
+          font-size: clamp(2.5rem, 10vw, 4rem);
+        }
+
+        .left-content li {
+          font-size: 1rem;
+        }
+      }
+
+      .page-right {
+        .page-image-wrapper {
+          aspect-ratio: 4 / 3;
+        }
+
+        .right-quote {
+          font-size: 1rem;
         }
       }
     }

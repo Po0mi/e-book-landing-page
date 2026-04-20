@@ -62,10 +62,11 @@ export interface NavbarProps {
  */
 const Navbar: React.FC<NavbarProps> = ({
   links = [
-    { id: "home", label: "Home", href: "#hero" },
+    { id: "hero", label: "Home", href: "#hero" },
     { id: "chapters", label: "Chapters", href: "#chapters" },
-    { id: "services", label: "Services", href: "#services" },
-    { id: "contact", label: "Contact", href: "#contact" },
+    { id: "testimonials", label: "Readers", href: "#testimonials" },
+    { id: "pricing", label: "Pricing", href: "#pricing" },
+    { id: "inquiry", label: "FAQ", href: "#inquiry" },
   ],
   logoText = "Curator Editions",
 }) => {
@@ -155,8 +156,7 @@ const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      {/* Logo: Clicking returns to the top of the page */}
+    <nav className={`navbar ${isScrolled ? "scrolled" : ""} ${isMobileMenuOpen ? "menu-open" : ""}`}>
       <a href="#home" className="logo">
         {logoText}
       </a>

@@ -1,0 +1,21 @@
+.quote {
+  min-height: 40svh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  padding: clamp(6rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem)
+    clamp(4rem, 8vw, 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 10vw, 4rem);
+    color: var(--color-on-primary);
+    text-align: center;
+    font-weight: 100;
+    font-style: italic;
+  }
+}

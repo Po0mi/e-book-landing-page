@@ -1,0 +1,44 @@
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+
+  // Hide on touch devices
+  @media (hover: none) {
+    display: none;
+  }
+}
+
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-primary);
+  translate: -50% -50%;
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+
+  &.dot--hover {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+  }
+}
+
+.cursor-outline {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-primary);
+  translate: -50% -50%;
+  transition: width 0.25s ease, height 0.25s ease,
+    border-color 0.25s ease, background-color 0.25s ease;
+
+  &.outline--hover {
+    width: 52px;
+    height: 52px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: var(--color-primary);
+  }
+}

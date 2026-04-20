@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import Navbar from "@/layouts/Navbar";
+import Footer from "@/layouts/Footer";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import CustomCursor from "@/components/CustomCursor";
+import IntroAnimation from "@/components/IntroAnimation";
 import "./globals.css";
 import "@/styles/global.scss";
 
@@ -16,8 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <IntroAnimation />
+        <CustomCursor />
+        <SmoothScrollProvider />
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
