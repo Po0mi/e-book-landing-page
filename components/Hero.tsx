@@ -32,7 +32,9 @@ const Hero = () => {
             className="hero-image"
             priority
           />
-          <button className="manifesto-btn">DOWNLOAD THE CORE MANIFESTO</button>
+          <div className="manifesto">
+            THE FIRST EDITION OF THE ARCHIVAL SERIES
+          </div>
         </div>
 
         <div className="stats-grid">
