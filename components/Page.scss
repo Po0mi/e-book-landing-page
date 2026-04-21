@@ -22,7 +22,7 @@
       padding: 5rem;
       height: 750px;
       width: 750px;
-      box-shadow: 0 5px 5px rgba(105, 105, 105, 0.1);
+      box-shadow: 0 20px 20px rgba(105, 105, 105, 0.3);
 
       .left-number {
         font-family: var(--font-display);
@@ -81,7 +81,8 @@
 
       .right-quote {
         font-family: var(--font-body);
-        font-size: clamp(1rem, 1.5vw, 1.5rem);
+        font-size: clamp(1rem, 1.5vw, 2rem);
+        text-align: center;
         font-weight: 300;
         font-style: italic;
         line-height: var(--lh-standard);

@@ -41,13 +41,15 @@
     height: 100%;
     align-self: flex-start;
 
-
     .body-left,
     .body-middle,
     .body-right {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      border-left: 1px solid black;
+      border-top: 1px solid black;
+      height: 300px;
     }
 
     .label {
@@ -56,6 +58,8 @@
       font-size: var(--fs-display-md);
       font-weight: 600;
       display: inline-block;
+      margin-left: 1rem;
+      margin-top: 1rem;
     }
 
     .body-title {
@@ -64,6 +68,7 @@
       text-transform: uppercase;
       letter-spacing: -3;
       display: inline-block;
+      margin-left: 1rem;
     }
 
     .body-content {
@@ -72,6 +77,7 @@
       font-weight: 300;
       max-width: 50ch;
       display: inline-block;
+      margin-left: 1rem;
     }
   }
 
@@ -115,6 +121,12 @@
       .body-content {
         font-size: 1rem;
         max-width: 100%;
+      }
+
+      .body-left,
+      .body-middle,
+      .body-right {
+        height: 230px;
       }
     }
   }

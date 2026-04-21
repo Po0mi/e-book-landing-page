@@ -130,6 +130,7 @@
     // ─────────────────────────────────────
     // STATS (Fixed & Cleaned)
     // ─────────────────────────────────────
+
     .stats-grid {
       grid-area: 11/1/13/13;
       display: contents;
@@ -156,6 +157,10 @@
       flex-direction: column;
       gap: 0.25rem;
       justify-self: center;
+      border-left: 1px solid black;
+      border-top: 1px solid black;
+      height: 80px;
+      width: 300px;
 
       .stat-label {
         font-family: var(--font-body);
@@ -164,6 +169,8 @@
         color: var(--color-on-surface-variant);
         letter-spacing: 0.05em;
         text-transform: uppercase;
+        margin-left: 1rem;
+        margin-top: 0.5rem;
       }
 
       .stat-value {
@@ -172,6 +179,7 @@
         font-weight: 600;
         color: var(--color-primary);
         letter-spacing: var(--ls-tight);
+        margin-left: 1rem;
       }
     }
   }
@@ -248,6 +256,8 @@
         .stat4 {
           grid-area: unset;
           justify-self: start;
+          width: 155px;
+          height: 70px;
         }
       }
     }
